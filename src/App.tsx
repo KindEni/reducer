@@ -16,4 +16,6 @@ function App() {
   );
 }
 
+//// Study tis code with the video and see how everything works together
+
 export default App;
