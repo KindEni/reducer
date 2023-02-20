@@ -1,11 +1,15 @@
 import * as React from 'react';
-import {PostReducer, INITIAL_STATE} from "./postReducer";
+import {PostReducer} from "./postReducer";
 
 
 const Post = () => {
   /// USING REDUCER
 
-const [state, dispatch] = React.useReducer(PostReducer, INITIAL_STATE)
+const [state, dispatch] = React.useReducer(PostReducer, {
+  loading: false,
+  error: false,
+  post: {}
+})
 
 const handleFetch = () => {
   dispatch({type: "FETCH_START", payload: {}});
@@ -22,6 +26,7 @@ const handleFetch = () => {
 return (
   // USING USEREDUCER
 
+  // work on the title in state.title
   <div>
     <button onClick={handleFetch}>
       {state.loading ? "Wait..." : "Fetch the post"}
